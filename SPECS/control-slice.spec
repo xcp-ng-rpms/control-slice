@@ -1,7 +1,7 @@
 Summary: XenServer Control Slice
 Name: control-slice
 Version: 1.1.0
-Release: 1
+Release: 1%{dist}
 License: GPL2
 Group: Administration/System
 Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/control-slice/archive?at=v%{version}&format=tar.gz&prefix=%{name}-%{version}#/%{name}-%{version}.tar.gz
