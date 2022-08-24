@@ -1,15 +1,12 @@
+%global package_speccommit 2e62ca413614a98db2a15e95eac16d17c37edd6b
+%global package_srccommit v1.3.0
 Summary: XenServer Control Slice
 Name: control-slice
-Version: 1.2.1
-Release: 1
+Version: 1.3.0
+Release: 1%{?xsrel}%{?dist}
 License: GPL2
 Group: Administration/System
-
-Source0: https://code.citrite.net/rest/archive/latest/projects/XS/repos/control-slice/archive?at=v1.2.1&format=tar.gz&prefix=control-slice-1.2.1#/control-slice-1.2.1.tar.gz
-
-
-Provides: gitsha(https://code.citrite.net/rest/archive/latest/projects/XS/repos/control-slice/archive?at=v1.2.1&format=tar.gz&prefix=control-slice-1.2.1#/control-slice-1.2.1.tar.gz) = 3e09fb047155a8a4cded6814de3e3bc01d37a466
-
+Source0: control-slice-1.3.0.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-buildroot
 Requires: libcgroup libcgroup-tools
 
@@ -39,6 +36,13 @@ systemctl daemon-reload >/dev/null 2>&1 || :
 /opt/xensource/libexec/systemd_slice_pids
 
 %changelog
+* Tue Dec 14 2021 Edwin Török <edvin.torok@citrix.com> - 1.3.0-1
+- CP-38750: fix typo in xapi-storage-script.service
+- CP-38750: whitelist more control-plane services
+
+* Fri Dec 18 2020 Edwin Török <edvin.torok@citrix.com> - 1.2.1-2
+- Imported into Koji
+
 * Tue Feb 19 2019 Edwin Török <edvin.torok@citrix.com> - 1.2.1-1
 - CA-301997: A realtime process should not be able to use 100% of a CPU (fixup)
 
